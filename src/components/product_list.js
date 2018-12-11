@@ -6,7 +6,8 @@ const ProductList = props => {
         return <ProductListItem 
             key={product.id}
             product={product}
-            onProductAdd={props.onProductAdd} />
+            onProductAdd={props.onProductAdd}
+            removeProduct={props.removeProduct} />
     });
 
     return (

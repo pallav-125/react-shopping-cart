@@ -9,10 +9,45 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 
+		this.productData = productData.slice();
+		this.selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) ||  [];
+
+		if(this.selectedProducts.length) {
+			this.selectedProducts.forEach(item => {
+				this.productData.forEach(product => {
+					if(product.id === item.id) {
+						product.qty = item.qty;
+					}
+				})
+			});
+		}
+
 		this.state = { 
-			products: productData,
-			selectedProducts: JSON.parse(localStorage.getItem('selectedProducts')) ||  []
+			products: this.productData,
+			selectedProducts: this.selectedProducts 
 		};
+	}
+
+	updateProducts(selectedProducts) {
+		let productData = this.state.products.slice();
+
+		selectedProducts.forEach(item => {
+			productData.forEach(product => {
+				if(product.id === item.id) {
+					product.qty = item.qty;
+				}
+			})
+		});
+
+		selectedProducts = selectedProducts.filter(item => {
+			return item.qty;
+		})
+
+		localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+		this.setState({
+			products: productData,
+			selectedProducts: selectedProducts
+		})
 	}
 
 	addProduct(product) {
@@ -45,8 +80,7 @@ class App extends React.Component {
 			}
 		}
 
-		localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
-		this.setState({selectedProducts: selectedProducts});
+		this.updateProducts(selectedProducts);
 	}
 
 	removeItemFromCart(selectedProduct) {
@@ -67,6 +101,19 @@ class App extends React.Component {
 		this.setState({selectedProducts: selectedProducts});
 	}
 
+	removeProduct(selectedProduct) {
+		let selectedProducts = this.state.selectedProducts.slice();
+
+		selectedProducts.forEach(item => {
+			if(item.id === selectedProduct.id) {
+				item.qty -= 1;
+				item.totalProductAmount -= item.price;
+			}
+		});
+		
+		this.updateProducts(selectedProducts);
+	}
+
 	render() {
 		return (
 			<div>
@@ -74,7 +121,8 @@ class App extends React.Component {
 				<div className="row">
 					<ProductList 
 						products={this.state.products}
-						onProductAdd={selectedProduct => {this.addProduct(selectedProduct)} } />
+						onProductAdd={selectedProduct => {this.addProduct(selectedProduct)} } 
+						removeProduct={selectedProduct => {this.removeProduct(selectedProduct)} } />
 					<ShoppingCart 
 						selectedProducts={this.state.selectedProducts}
 						removeItemFromCart={ selectedProduct => {this.removeItemFromCart(selectedProduct)} } />

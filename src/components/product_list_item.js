@@ -8,18 +8,19 @@ class Product extends React.Component {
     }
     
 
-    // plusMinusLabel = () => {
-    //     return (
-    //         <div>
-    //             <span className="label label-danger">-</span>
-    //             <span className="label label-default">{this.state.product.qty} in cart</span>
-    //             <span className="label label-primary"
-    //                 onClick={() => {this.props.onProductAdd(this.state.product)}}>
-    //                 +
-    //             </span>
-    //         </div>
-    //     );
-    // }
+    plusMinusLabel = () => {
+        return (
+            <div>
+                <span className="label label-danger"
+                    onClick={() => {this.props.removeProduct(this.state.product)}}>-</span>
+                <span className="label label-default">{this.state.product.qty} in cart</span>
+                <span className="label label-primary"
+                    onClick={() => {this.props.onProductAdd(this.state.product)}}>
+                    +
+                </span>
+            </div>
+        );
+    }
 
     addLabel = () => {
         return (
@@ -35,8 +36,7 @@ class Product extends React.Component {
 
     render() {
         let button;
-        // button = this.state.product.qty ? this.plusMinusLabel() : this.addLabel();
-        button = this.addLabel();
+        button = this.state.product.qty ? this.plusMinusLabel() : this.addLabel();
 
         return (
             <div className="product-list-item card text-xs-center">
