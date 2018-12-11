@@ -11,13 +11,17 @@ class Product extends React.Component {
     plusMinusLabel = () => {
         return (
             <div>
-                <span className="label label-danger"
-                    onClick={() => {this.props.removeProduct(this.state.product)}}>-</span>
-                <span className="label label-default">{this.state.product.qty} in cart</span>
-                <span className="label label-primary"
+                <label className="label label-danger"
+                    onClick={() => {this.props.removeProduct(this.state.product)}}>
+                    -
+                </label>
+                <label className="label label-default">
+                    {this.state.product.qty} in cart
+                </label>
+                <label className="label label-primary"
                     onClick={() => {this.props.onProductAdd(this.state.product)}}>
                     +
-                </span>
+                </label>
             </div>
         );
     }
