@@ -9,10 +9,10 @@ const productData = [{
     'totalProductAmount': 0
 },{
     'id': 2,
-    'url': 'https://www.bigbasket.com/media/uploads/p/s/278286_3-mtr-chilli-powder.jpg',
-    'brandName': 'Dakshins',
-    'productName': 'Biryani Pulav - Masala',
-    'packagingDetail': '100gm pouch',
+    'url': 'https://www.bigbasket.com/media/uploads/p/s/40120604_3-cadbury-dairy-milk-silk-mocha-caramello.jpg',
+    'brandName': 'Dairy Milk',
+    'productName': 'Mocha Caramello',
+    'packagingDetail': '60gm',
     'price': 100,
     'qty': 0,
     'totalProductAmount': 0
@@ -20,49 +20,29 @@ const productData = [{
     'id': 3,
     'url': 'https://www.bigbasket.com/media/uploads/p/s/278286_3-mtr-chilli-powder.jpg',
     'brandName': 'MTR',
-    'productName': 'Tamarind - Imli',
+    'productName': 'Powder - Chilli',
     'packagingDetail': '500gm pouch',
     'price': 70,
     'qty': 0,
     'totalProductAmount': 0
- }
- 
-//,{
-//     'id': 4,
-//     'url': 'https://www.bigbasket.com/media/uploads/p/s/278286_3-mtr-chilli-powder.jpg',
-//     'brandName': 'MTR',
-//     'productName': 'Powder - Chicken',
-//     'packagingDetail': '500gm pouch',
-//     'price': 150
-// },{
-//     'id': 5,
-//     'url': 'https://www.bigbasket.com/media/uploads/p/s/278286_3-mtr-chilli-powder.jpg',
-//     'brandName': 'MTR',
-//     'productName': 'Chaat Masala',
-//     'packagingDetail': '500gm pouch',
-//     'price': 75
-// },{
-//     'id': 6,
-//     'url': 'https://www.bigbasket.com/media/uploads/p/s/278286_3-mtr-chilli-powder.jpg',
-//     'brandName': 'MTR',
-//     'productName': 'Powder - Chilli',
-//     'packagingDetail': '500gm pouch',
-//     'price': 95
-// },{
-//     'id': 7,
-//     'url': 'https://www.bigbasket.com/media/uploads/p/s/278286_3-mtr-chilli-powder.jpg',
-//     'brandName': 'MTR',
-//     'productName': 'Salt',
-//     'packagingDetail': '500gm pouch',
-//     'price': 65
-// },{
-//     'id': 8,
-//     'url': 'https://www.bigbasket.com/media/uploads/p/s/278286_3-mtr-chilli-powder.jpg',
-//     'brandName': 'MTR',
-//     'productName': 'Powder - maggi',
-//     'packagingDetail': '500gm pouch',
-//     'price': 85
-// }
-];
+ },{
+    'id': 4,
+    'url': 'https://www.bigbasket.com/media/uploads/p/s/102750_4-lays-potato-chips-indias-magic-masala.jpg',
+    'brandName': 'Lays',
+    'productName': 'Masala Chips',
+    'packagingDetail': '10gm pouch',
+    'price': 10,
+    'qty': 0,
+    'totalProductAmount': 0
+},{
+    'id': 5,
+    'url': 'https://www.bigbasket.com/media/uploads/p/s/1204807_1-pringles-potato-crisps-sour-cream-and-onion.jpg',
+    'brandName': 'Pringles',
+    'productName': 'Potato Chips',
+    'packagingDetail': '2 x 125gm',
+    'price': 400,
+    'qty': 0,
+    'totalProductAmount': 0
+}];
 
 export default productData;
