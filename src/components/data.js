@@ -1,6 +1,6 @@
 const productData = [{
     'id': 1,
-    'url': 'https://www.bigbasket.com/media/uploads/p/s/30004937_4-double-horse-powder-turmeric.jpg',
+    'url': 'https://www.bigbasket.com/media/uploads/p/s/268037_5-mtr-powder-turmeric.jpg',
     'brandName': 'MTR',
     'productName': 'Powder - Turmeric',
     'packagingDetail': '500gm pouch',
